@@ -151,5 +151,4 @@ function plotPath(map) {
             }
         }
     }
-
 }
