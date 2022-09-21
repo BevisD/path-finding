@@ -1,0 +1,75 @@
+:root {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    font-size: 1rem;
+    padding: 1rem 0rem 1rem 0.5rem;
+}
+
+.option, .reset, .solve {
+    font-size: inherit;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    cursor: pointer;
+    background-color: #0077ae;
+}
+
+.active, .reset:hover,.solve:hover {
+    background-color: #004261;
+}
+
+.cell {
+    background-color: #ddd;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    transition: background-color 200ms;
+}
+
+.cell:hover {
+    background-color: #aaa;
+}
+
+.cell.wall {
+    background-color: black;
+}
+
+.cell.start {
+    background-color: rgb(87, 182, 71);
+}
+
+.cell.end {
+    background-color: rgb(251, 218, 29);
+}
+
+.cell.travelled {
+    background-color: #00567e;
+}
+
+.cell.path {
+    background-color: rgb(215, 52, 52);
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
