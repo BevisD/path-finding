@@ -1,4 +1,5 @@
 $(".solve").on("click", () => {
+    pathFound = false;
     $(".travelled").each((index, target) => {
         $(target).removeClass("travelled")
     })
@@ -26,10 +27,15 @@ $(".solve").on("click", () => {
             map[row_index][col_index] = value;
         })
     })
-    solveMap(map, () => {plotPath(map)});
+    solveMap(map, () => {
+        if(pathFound){
+            plotPath(map)
+        }});
 })
 
 let nearestEndRow, nearestEndCol;
+let pathFound = false;
+
 
 function solveMap(map, callback) {
     let start_row, start_col;
@@ -52,7 +58,6 @@ function solveMap(map, callback) {
     let offsets  = [[0, 1], [1, 0], [0, -1], [-1, 0]]
     queue.push([start_row, start_col, 0])
 
-    let pathFound = false;
     let item = queue.shift()
 
     let interval = setInterval(async ()=>{
@@ -131,7 +136,10 @@ function plotPath(map) {
             new_row = curr_row + offset[0];
             new_col = curr_col + offset[1];
             new_dist = curr_dist - 1
-            console.log(new_row, new_col)
+
+            if (new_row < 0 || new_row >= ROWS || new_col < 0 || new_col >= COLS){
+                continue;
+            }
 
             if (map[new_row][new_col] == "0"){
                 atStart = true;

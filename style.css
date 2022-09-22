@@ -29,7 +29,7 @@ header {
 }
 
 .active, .reset:hover,.solve:hover {
-    background-color: #004261;
+    background-color: #26547C;
 }
 
 .cell {
@@ -49,19 +49,19 @@ header {
 }
 
 .cell.start {
-    background-color: rgb(87, 182, 71);
+    background-color: #06d660;
 }
 
 .cell.end {
-    background-color: rgb(251, 218, 29);
+    background-color: #FFD166;
 }
 
 .cell.travelled {
-    background-color: #00567e;
+    background-color: #26547C;
 }
 
 .cell.path {
-    background-color: rgb(215, 52, 52);
+    background-color: #ef474f;
 }
 
 .grid-container {
