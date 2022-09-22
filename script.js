@@ -69,6 +69,7 @@ $(document).on("mousedown", (event) => {
             $(".cell.start").each((index, target) => {
                 $(target).removeClass("start");
             })
+            clearCell($(event.target))
             $(event.target).addClass(mode);
         }
         else {
@@ -83,6 +84,7 @@ $(document).on("mousemove", (event) => {
                 clearCell($(event.target))
             }
             else if (mode != "start") {
+                clearCell($(event.target))
                 $(event.target).addClass(mode);
             }
 

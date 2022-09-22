@@ -117,6 +117,9 @@ function plotPath(map) {
     for (let offset of offsets) {
         new_row = curr_row + offset[0];
         new_col = curr_col + offset[1];
+        if (new_row < 0 || new_row >= ROWS || new_col < 0 || new_col >= COLS){
+            continue;
+        }
         if (!isNaN(map[new_row][new_col])){
             curr_dist = map[new_row][new_col];
             curr_row = new_row;
